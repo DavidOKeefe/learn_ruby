@@ -2,8 +2,8 @@ def echo(word)
   word
 end
 
-def shout(x)
-  x.upcase
+def shout(word)
+  word.upcase
 end
 
 def repeat(word, repeat_this_many=2)
@@ -12,19 +12,19 @@ def repeat(word, repeat_this_many=2)
   repeated_phrase.join(" ")
 end
 
-def start_of_word(x,y)
-  result = x.split(//)
-  result.take(y).join("")
+def start_of_word(word,length)
+  result = word.split(//)
+  result.take(length).join("")
 end
 
-def first_word(x)
-  result = x.split
+def first_word(words)
+  result = words.split
   result.take(1).join("")
 end
 
-def titleize(x)
-  words = x.split
-  mostly_capitalized_words = words.each do |word|
+def titleize(words)
+  words_arr = words.split
+  mostly_capitalized_words = words_arr.each do |word|
     if lower_case_word?(word)
       word.downcase!
     else
@@ -33,7 +33,7 @@ def titleize(x)
   end
 
   mostly_capitalized_words.first.capitalize!
-  words.join(" ")
+  words_arr.join(" ")
 end
 
 def lower_case_word?(word)
