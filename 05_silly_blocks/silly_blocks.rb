@@ -5,7 +5,6 @@ end
 def adder(add = 1)
   num = yield
   num + add
-
 end
 
 def repeater(num = 1)
